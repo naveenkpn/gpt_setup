@@ -28,7 +28,8 @@ void main()
 	display("Initializing...");
 	chip_init();
 	enable_spi(0);
-	pll_init();
+	pll_init();//Alternately 
+//	divider_init();
 	clearscr();
 	display("   Oscillator");
 	line2();
@@ -39,6 +40,7 @@ void main()
 	display("Waiting for Host to ping");
 	enable_serial();
 	fmeter_reset();
+	LF_SELECT = 0;
 	scale = 2650/N;
 	
 	i=0;

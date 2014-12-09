@@ -7,8 +7,8 @@ static unsigned char fm_byte[6];
 #include</home/naveen/Documents/Keil_work_sorted/headers/port_allot_sdcc.h>
 #include</home/naveen/Documents/Keil_work_sorted/headers/lcd4bit.h>
 #include</home/naveen/Documents/Keil_work_sorted/headers/uart.h>
-#include</home/naveen/Documents/Keil_work_sorted/headers/fmeter.h>
 #include</home/naveen/Documents/Keil_work_sorted/headers/spi.h>
+#include</home/naveen/Documents/Keil_work_sorted/headers/fmeter.h>
 #include</home/naveen/Documents/Keil_work_sorted/headers/dac_adc.h>
 #include</home/naveen/Documents/Keil_work_sorted/headers/correlation.h>
 #include</home/naveen/Documents/Keil_work_sorted/headers/test_chip.h>
@@ -24,19 +24,22 @@ void main()
 	tLong frequency;
 	tChar byte1, byte2, temp, ichar[2];
 	
+	i=10;
 	lcd_init();
 	display("Initializing...");
 	chip_init();
-	pll_init();
+	enable_spi(0);
+	pll_init();//ALternately
+//	divider_init();
 	clearscr();
 	display("Phase Noise");
 	line2();
 	display("Characterization");
 	msDelay(1000);
-	enable_spi(0);
-	sclae = 2650/N;
+	scale = 2650/N;
 	bias = scale*(i+1);
 	dac_set(bias);
+	LF_SELECT = 0;
 	clearscr();
 	display("Oscillator");
 	line2();

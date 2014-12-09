@@ -1,7 +1,6 @@
 
 void pll_init()
 {
-	enable_spi(1);
 	PLL = 0;
 	msDelay(1);
 	SPDAT = 0X80;
@@ -57,12 +56,10 @@ void pll_init()
 	msDelay(1);
 	PLL = 1;
 	msDelay(10);
-	disable_spi();
 }
 
 void divider_init()
 {
-	enable_spi(1);
 	PLL = 0;
 	msDelay(1);
 	SPDAT = 0X80;
@@ -104,5 +101,4 @@ void divider_init()
 	msDelay(1);
 	PLL = 1;
 	msDelay(10);
-	disable_spi();
 }
