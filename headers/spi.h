@@ -8,12 +8,12 @@ void enable_spi(tInt type)
 {
 	if(type==0)
 	{
-		SPCON = 0x31;
+		SPCON = 0xBE;
 		SPCON |= 0x40;
 	}
 	else if(type==1)
 	{
-		SPCON = 0xB2;
+		SPCON = 0xBA;
 		SPCON |= 0x40;
 	}
 }
