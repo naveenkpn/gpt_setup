@@ -129,26 +129,26 @@ void load_test_data()
 	enable_spi(0);
 }
 /*================================================*/
-/*void sel_source(data_source I)
+void sel_source(tInt i)
 {
-	if(i==RING)
+	if(i==0)				//RING
 	{
 		DATA_SEL0=0;
 		DATA_SEL1=0;
 	}
-	if(i==PRBS7)
+	if(i==1)				//PRBS7
 	{
 		DATA_SEL0=1;
 		DATA_SEL1=0;
 	}
-	if(i==PRBS15)
+	if(i==3)				//PRBS15
 	{
 		DATA_SEL0=1;
 		DATA_SEL1=1;
 	}
-	if(i==OFFSET_CAL)
+	if(i==2)				//OFFSET CALIBRATION
 	{
 		DATA_SEL0=0;
 		DATA_SEL1=1;
 	}
-}*/
+}

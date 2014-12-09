@@ -1,5 +1,5 @@
 
-enum data_source{PRBS7, PRBS15, RING, OFFSET_CAL};
+//enum data_source {PRBS7, PRBS15, RING, OFFSET_CAL};
 
 //Port 0
 #define RCState   P0
