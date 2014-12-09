@@ -1,4 +1,3 @@
-void wait_spi();
 void fmeter_reset()
 {
 	tInt temp;
@@ -84,6 +83,3 @@ void display_freq(long unsigned freq)
 	}
 	display(" GHz");
 }
-
-
-//astrix and obelix

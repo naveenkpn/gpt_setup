@@ -61,7 +61,7 @@ void chip_init()
 	FMETER = 1;
 	PLL = 1;
 	CHIP_RO_EN = 1;
-	msDelay(1000);
+	msDelay(100);
 	read_RC_init();
 }
 /*================================================*/
@@ -73,7 +73,7 @@ void chip_reset()
     DATA_LOAD_EN = 1;
     LF_SELECT = 1;
     CHIP_RO_EN = 1;
-    msDelay(1000);
+    msDelay(100);
 	CHIP_RESET=0;
 }
 /*================================================*/
