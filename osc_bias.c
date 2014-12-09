@@ -20,15 +20,16 @@ __bit  FLG_CPL;
 void main()
 {
 	int8 i,N=24;
-	tInt bias,scale;
-	tLong frequency;
-	tChar byte1, byte2, temp, ichar[2];
+	tInt bias=0,scale;
+	//tLong frequency;
+	//tChar byte1, byte2, temp, ichar[2];
 	
 	i=10;
 	lcd_init();
 	display("Initializing...");
 	chip_init();
 	enable_spi(0);
+	dac_set(bias);
 	pll_init();//ALternately
 //	divider_init();
 	clearscr();
