@@ -29,18 +29,17 @@ void read_RC_init()
 	state=RCState;
 	state &=0x0F;
 	clearscr();
+	display("RC state = ");
+	display_hex(state);
+	line2();
 	if(state!=0x00)
 	{
-		display("   Chip Reset");
-		line2();
-		display("    Failed!");
+		display("Reset Failed!");
 		msDelay(2000);
 	}
 	else
 	{
-		display("   Chip RESET");
-		line2();
-		display("   Successful");
+		display("Reset Successful");
 	}
 	msDelay(500);
 }
