@@ -1,23 +1,4 @@
 
-//#define lcd_port	P2
-
-#define LCD_EN      0x080
-#define LCD_RS      0x020
-
-typedef unsigned char tChar;
-typedef unsigned int tInt;
-typedef unsigned long tLong;
-typedef uint8_t int8;
-
-
-//__sbit __at 'P2_7' E;
-//__sbit __at 'P2_5' RS;
-//__sbit __at 'P2_6' RW;
-
-//sbit E = P2^7;
-//sbit RS = P2^5;
-//sbit RW = P2^6;
-
 void msDelay(int msec)
 {	  
 int cntr_1, cntr_2;
