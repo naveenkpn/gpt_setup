@@ -5,11 +5,11 @@ void main()
 	int8 i,N=24;
 	tInt bias=0,scale;
 	tLong frequency;
-	tChar byte1, byte2, temp, ichar[2];
+	tChar byte1, byte2, temp;//, ichar[2];
 
 	lcd_init();
 	display("Initializing...");
-	chip_init();
+	chip_init_CCFFE();
 	enable_spi(0);
 	dac_set(bias);
 	pll_init();//Alternately 
@@ -39,8 +39,9 @@ void main()
 		frequency = fmeasure();
 		clearscr();
 		display("f(");
-		itoa(i,ichar,10);
-		display(ichar);
+		display_int(i);
+		//itoa(i,ichar,10);
+		//display(ichar);
 		display(")=");
 		display_freq(frequency);
 		temp = receive_serial();

@@ -44,7 +44,7 @@ void read_RC_init()
 	msDelay(500);
 }
 /*================================================*/
-void chip_init()
+void chip_init_CCFFE()
 {
 	CHIP_RESET = 1;
 	TNH_RC_CKIN = 1;

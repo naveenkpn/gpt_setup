@@ -104,4 +104,11 @@ void display_hex(tChar hex)
 	lcd_data(temp_L);           // Display the number
 }
 /*================================================*/
-		
+void display_int(tInt integer)
+{
+	tChar ichar[2];
+	itoa(integer,ichar,10);
+ //   display_string(i);
+    display(ichar);
+}
+

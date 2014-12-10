@@ -72,19 +72,5 @@ __bit cross_correlation(tChar *source_data)
 	return test_result;
 }
 /*================================================*/
-void req_source_data()
-{
-	tInt i;
-	clearscr();
-	display("Req test data");
-	for(i=0;i<16;i++)
-	{	
-		source_data[i] = receive_serial();
-	}
-	clearscr();
-	display("Test data");
-	line2();
-	display("received");
-}
 
 

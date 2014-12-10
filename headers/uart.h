@@ -75,4 +75,13 @@ void load_test_data()
 	display("test data read");
 	line2();
 	display("complete");
+}
+
+void log_test_results()
+{
+	tInt i;
+	for(i=0;i<20;i++)
+    {
+        send_byte(chip_data[i]);
+    }
 }	
