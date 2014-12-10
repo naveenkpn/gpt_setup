@@ -14,6 +14,8 @@ enum data_source {PRBS7, PRBS15, RING, OFFSET_CAL};
 static tChar chip_data[30],source_data[30];
 static tChar fm_byte[6];
 
+__bit FLG_CPL;
+
 #define LCD_EN      0x080
 #define LCD_RS      0x020
 

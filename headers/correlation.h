@@ -44,7 +44,7 @@ void flip_received_data()
 	}	
 } 
 /*================================================*/
-__bit cross_correlation(tChar *source_data)
+__bit cross_correlation()//tChar *source_data)
 {
 	tChar i,j;
 	__bit test_result = 0;
