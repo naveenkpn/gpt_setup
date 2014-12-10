@@ -21,6 +21,8 @@ void main()
 {
 	lcd_init();
 	display("Initializing...");
+	enable_spi(0);
+	dac_set(0);
 	chip_init();
 	clearscr();
 	display("Offset trim DUT1");
