@@ -47,8 +47,9 @@ void main()
 
 	lcd_init();
 	display("Initializing...");
-	chip_init();
 	enable_spi(0);
+	dac_set(0);
+	chip_init();
 	pll_init();
 	clearscr();
 	display("     CCFFE");

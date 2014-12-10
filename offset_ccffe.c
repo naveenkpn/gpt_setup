@@ -19,6 +19,8 @@ __bit  FLG_CPL;
 
 void main()
 {
+	//enum data_source ABC;
+	//ABC=PRBS7;
 	lcd_init();
 	display("Initializing...");
 	enable_spi(0);
@@ -26,8 +28,8 @@ void main()
 	chip_init();
 	clearscr();
 	display("Offset trim DUT1");
-	sel_source(2);
-	
+	sel_source(OFFSET_CAL);
+	msDelay(1);
 	LF_SELECT = 0;
 	while(1)
 	{}

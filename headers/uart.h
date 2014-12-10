@@ -60,3 +60,19 @@ tChar it_serial() __interrupt 5
 	}
 	return 0;
 }
+
+
+void load_test_data()
+{
+	tInt i;
+	clearscr();	
+	display("Req test data");
+	for(i=0;i<20;i++)
+	{
+		source_data[i]=receive_serial();
+	}
+	clearscr();
+	display("test data read");
+	line2();
+	display("complete");
+}	

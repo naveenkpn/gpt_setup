@@ -116,7 +116,7 @@ void tick_TNH_RC_CKIN()
     TNH_RC_CKIN = 1;
 }
 /*================================================*/
-void load_test_data()
+void write_test_data()
 {
     tInt i;
 	disable_spi();
@@ -129,24 +129,24 @@ void load_test_data()
 	enable_spi(0);
 }
 /*================================================*/
-void sel_source(tInt i)
+void sel_source(enum data_source I)
 {
-	if(i==0)				//RING
+	if(I==RING)				//RING
 	{
 		DATA_SEL0=0;
 		DATA_SEL1=0;
 	}
-	if(i==1)				//PRBS7
+	if(I==PRBS7)			//PRBS7
 	{
 		DATA_SEL0=1;
 		DATA_SEL1=0;
 	}
-	if(i==3)				//PRBS15
+	if(I==PRBS15)			//PRBS15
 	{
 		DATA_SEL0=1;
 		DATA_SEL1=1;
 	}
-	if(i==2)				//OFFSET CALIBRATION
+	if(I==OFFSET_CAL)		//OFFSET CALIBRATION
 	{
 		DATA_SEL0=0;
 		DATA_SEL1=1;
