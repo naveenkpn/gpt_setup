@@ -9,6 +9,7 @@ void main()
 	enable_spi(0);
 	dac_set(0);
 	chip_init_CCFFE();
+	pll_init();
 	clearscr();
 	display("Offset trim DUT1");
 	sel_source(OFFSET_CAL);

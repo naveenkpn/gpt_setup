@@ -85,3 +85,11 @@ void log_test_results()
         send_byte(chip_data[i]);
     }
 }	
+
+void send_int(tInt integer)
+{
+	tChar ichar[2];
+	itoa(integer,ichar,10);
+    send_serial(ichar);
+}
+

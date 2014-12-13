@@ -64,9 +64,12 @@ void main()
 			if(test_result)
 			{
 				FLG_CPL=1;
-				//line2();
-				//display("SUCCESS");
-				//while(1);
+                send_byte(fm_byte[0]);
+                send_byte(fm_byte[1]);
+                send_byte(fm_byte[2]);
+                send_int(i);
+                send_byte(',');
+                send_int(j);
 			}
 		}
 	}

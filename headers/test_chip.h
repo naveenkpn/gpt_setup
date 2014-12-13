@@ -88,6 +88,27 @@ void chip_init_CCFFE()
 	read_RC_init();
 }
 /*================================================*/
+void chip_init_CDR()
+{
+	CHIP_RESET = 1;
+	TNH_RC_CKIN = 1;
+	RX_RC_CKIN = 1;
+	DATA_LOAD_EN = 0;
+	LF_SELECT = 1;
+	DATA_SEL0 = 0;
+	DATA_SEL1 = 0;
+	CDR_CCFFE = 1;
+	SPICK = 1;
+	DAC = 1;
+	ADC = 1;
+	FMETER = 1;
+	PLL = 1;
+	CHIP_RO_EN = 1;
+	msDelay(100);
+	read_RC_init();
+}
+/*================================================*/
+
 void chip_reset()
 {
 	CHIP_RESET = 1;

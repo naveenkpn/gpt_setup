@@ -10,7 +10,7 @@ void main()
 	i=10;
 	lcd_init();
 	display("Initializing...");
-	chip_init();
+	chip_init_CCFFE();
 	enable_spi(0);
 	dac_set(bias);
 	pll_init();//ALternately
