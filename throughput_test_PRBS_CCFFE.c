@@ -17,6 +17,7 @@ void main()
 	chip_init_CCFFE();
 	pll_init();
 	clearscr();
+	enable_serial();
 	display("Set Jumpers and ping");
 	temp = receive_serial();
 	clearscr();
@@ -33,13 +34,13 @@ void main()
 	display("With 7 bit PRBS");
 	scale = 2650/N;
 	
-	for(i=N;i>0;i--)
+	for(i=0;i<N;i++)
 	{
 		for(j=0;j<20;j++)
 		{
 			chip_init_CCFFE();
 			sel_source(PRBS7);
-			bias=scale*i;
+			bias=scale*(i+1);
 			dac_set(bias);
 			msDelay(1000);			
 			for(k=j;k>=0;k--)
@@ -53,11 +54,14 @@ void main()
 			display_int(i);
 			display(",");
         	display_int(j);
+			display(",");
+			display_int(k);
         	display(")=");
         	display_freq(frequency);
 			LF_SELECT = 0;
 			msDelay(1);
 			LF_SELECT = 1;
+			msDelay(1000);
 			read_results_CCFFE();
 			test_result = cross_correlation();//source_data);
 			if(test_result)

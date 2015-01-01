@@ -16,6 +16,7 @@ void main()
 	chip_init_CDR();
 	pll_init();
 	clearscr();
+	enable_serial();
 	display("Set Jumpers and ping");
 	temp = receive_serial();
 	clearscr();

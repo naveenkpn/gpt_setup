@@ -6,16 +6,33 @@ void dac_set(tLong bias)
 	byte1 = bias/256;
 	byte1 = 0x70 | byte1;
 	
-	if(bias > 2700)
+	if(bias > 3186)
 	{
 		clearscr();
 		display("ERROR!");
 		display_hex(byte1);
 		display_hex(byte2);
 		line2();
-		display("DAC O/P ~ 1.2V");
+		display("DAC O/P ~ 1.4V");
 		while(1);
 	}
+	else if(bias > 2700)
+	{
+		clearscr();	
+		display("Warning");
+        display_hex(byte1);
+        display_hex(byte2);
+		line2();
+	    display("DAC O/P > 1.2V");
+        DAC = 0;
+        SPDAT = byte1;
+        wait_spi();
+        SPDAT = byte2;
+        wait_spi();
+        byte2 = SPDAT;
+        DAC = 1;
+        //while(1);
+    }		
 	else
 	{
 		DAC = 0;

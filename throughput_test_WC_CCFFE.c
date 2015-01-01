@@ -17,6 +17,7 @@ void main()
 	chip_init_CCFFE();
 	pll_init();
 	clearscr();
+	enable_serial();
 	display("Set Jumpers and ping");
 	temp = receive_serial();
 	clearscr();

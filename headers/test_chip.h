@@ -59,13 +59,23 @@ void read_RC_init()
 	if(state!=0x00)
 	{
 		display("Reset Failed!");
-		msDelay(2000);
+		//msDelay(2000);
 	}
 	else
 	{
 		display("Reset Successful");
 	}
 	msDelay(500);
+}
+/*================================================*/
+void read_RC_state()
+{
+	tChar state;
+	state=RCState;
+	state &=0x0F;
+	clearscr();
+	display("RC state = ");
+	display_hex(state);
 }
 /*================================================*/
 void chip_init_CCFFE()

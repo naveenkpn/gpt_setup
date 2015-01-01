@@ -1,4 +1,12 @@
 
+void usDelay()
+{	  
+int cntr_2;
+      for ( cntr_2 = 0; cntr_2 <= 30; ++cntr_2);
+}
+
+
+
 void msDelay(int msec)
 {	  
 int cntr_1, cntr_2;

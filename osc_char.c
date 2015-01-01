@@ -6,15 +6,24 @@ void main()
 	tInt bias=0,scale;
 	tLong frequency;
 	tChar byte1, byte2, temp;//, ichar[2];
-
+	
+	scale=2650/N;
+	i=16;
+	bias=scale*(i+1);
+	enable_spi(0);
+	dac_set(bias);
 	lcd_init();
 	display("Initializing...");
 	chip_init_CCFFE();
-	enable_spi(0);
-	dac_set(bias);
-	pll_init();//Alternately 
-//	divider_init();
+//	enable_spi(0);
+//	dac_set(bias);
+//	pll_init();//Alternately 
+	divider_init();
 	clearscr();
+	enable_serial();
+    display("Set Jumpers and ping");
+    temp = receive_serial();
+    clearscr();
 	display("   Oscillator");
 	line2();
 	display("Characterization");
@@ -23,7 +32,10 @@ void main()
 	clearscr();
 	display("Waiting for Host to ping");
 	enable_serial();
-	fmeter_reset();
+	temp = receive_serial();
+	fmeter_reset();	
+	CHIP_RESET = 0;
+	read_RC_init();
 	LF_SELECT = 0;
 	scale = 2650/N;
 	
@@ -53,7 +65,7 @@ void main()
 		send_byte(fm_byte[2]);
 		msDelay(1000);
 	}
-
+	LF_SELECT=1;
 	clearscr();
 	display("Test Completed");
  	msDelay(5000);
